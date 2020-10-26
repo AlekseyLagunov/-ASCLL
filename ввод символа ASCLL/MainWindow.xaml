@@ -1,0 +1,44 @@
+﻿<Window x:Class="ввод_символа_ASCLL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ввод_символа_ASCLL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="183.031" Width="222.927">
+    <Window.Resources>
+        <Style x:Key="1">
+            <Setter Property="Control.Background" Value="#FF474747" />
+            <Setter Property="Control.Foreground" Value="LightSteelBlue" />
+            <Setter Property="Control.FontSize" Value="12" />
+            <Setter Property="Control.Width" Value="30" />
+        </Style>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="Button.Background" Value="Black" />
+                <Setter Property="Button.Foreground" Value="White" />
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Red" />
+                    <Setter Property="Foreground" Value="BlueViolet" />
+                </Trigger>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True" />
+                        <Condition Property="IsPressed" Value="True" />
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="Foreground" Value="Red" />
+                        <Setter Property="FontSize" Value="20" />
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TextBox x:Name="Txt" Style="{StaticResource 1}" HorizontalAlignment="Left" Height="23" Margin="10,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" TextChanged="Txt_TextChanged"/>
+        <TextBlock x:Name="TxtB" Style="{StaticResource 1}" HorizontalAlignment="Left" Height="35" Margin="10,62,0,0" TextWrapping="Wrap" Text="Введите номер по таблице ASCII" VerticalAlignment="Top" Width="186" Background="#FF474747" />
+        <Button x:Name="Btn" Content="click me" HorizontalAlignment="Left" Height="23" Margin="67,112,0,0" VerticalAlignment="Top" Width="77" MouseEnter="Button_MouseEnter"/>
+    </Grid>
+</Window>
